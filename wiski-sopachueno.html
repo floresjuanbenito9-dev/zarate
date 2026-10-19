@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whisky Sopachueño</title>
+    <style>
+        /* Variables de colores llamativos */
+        :root {
+            --bg-color: #0d0d0d;
+            --text-light: #ffffff;
+            --gold-primary: #ffcc00;
+            --neon-orange: #ff5e00;
+            --card-bg: #1a1a1a;
+        }
+
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(135deg, var(--neon-orange) 0%, var(--gold-primary) 100%);
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+        }
+
+        header p {
+            color: #111;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Galería de productos */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 204, 0, 0.2);
+        }
+
+        .whisky-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px var(--gold-primary);
+        }
+
+        .card h3 {
+            color: var(--gold-primary);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        .btn-pedir {
+            background: var(--neon-orange);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-pedir:hover {
+            background: var(--gold-primary);
+            color: #000;
+        }
+
+        /* Pie de página y Contacto */
+        footer {
+            background-color: #000;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid var(--neon-orange);
+            margin-top: 50px;
+        }
+
+        .creadores {
+            font-size: 1.2em;
+            color: var(--gold-primary);
+            margin-bottom: 20px;
+        }
+
+        .contacto-numeros {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .numero-btn {
+            background: transparent;
+            border: 2px solid var(--gold-primary);
+            color: var(--gold-primary);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .numero-btn:hover {
+            background: var(--gold-primary);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Whisky Sopachueño</h1>
+        <p>Elaborado con pasión. Sabores que deslumbran.</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <!-- Producto 1 -->
+            <div class="card">
+                <div class="whisky-icon">🥃</div>
+                <h3>Sopachueño Gold 12 Años</h3>
+                <p>Single Malt. Notas vibrantes de vainilla y miel con un final ahumado inconfundible.</p>
+                <button class="btn-pedir" onclick="hacerPedido('Sopachueño Gold 12 Años')">Hacer Pedido</button>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="card">
+                <div class="whisky-icon">🥃</div>
+                <h3>Ámbar Fuego Reserve</h3>
+                <p>Blended Scotch. Un destello de caramelo tostado y especias exóticas.</p>
+                <button class="btn-pedir" onclick="hacerPedido('Ámbar Fuego Reserve')">Hacer Pedido</button>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="card">
+                <div class="whisky-icon">🥃</div>
+                <h3>Neón Cask Edición Especial</h3>
+                <p>Añejado en barricas de roble americano. Intenso color cobrizo y sabor a frutos secos.</p>
+                <button class="btn-pedir" onclick="hacerPedido('Neón Cask Edición Especial')">Hacer Pedido</button>
+            </div>
+            
+            <!-- Producto 4 -->
+            <div class="card">
+                <div class="whisky-icon">🥃</div>
+                <h3>Noche de Sopachuy</h3>
+                <p>Rye Whiskey. Fuerte, especiado y con un color oscuro y profundo que atrapa miradas.</p>
+                <button class="btn-pedir" onclick="hacerPedido('Noche de Sopachuy')">Hacer Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="creadores">
+            <strong>Creadores y Fundadores:</strong> Ariel y Santiago
+        </div>
+        <p>Realiza tu pedido contactándonos directamente a nuestros números de atención:</p>
+        <div class="contacto-numeros">
+            <a href="tel:68668457" class="numero-btn">📞 68668457</a>
+            <a href="tel:63734407" class="numero-btn">📞 63734407</a>
+        </div>
+    </footer>
+
+    <script>
+        // Función para procesar el pedido
+        function hacerPedido(nombreWhisky) {
+            const numeroPrincipal = "68668457";
+            const numeroSecundario = "63734407";
+            
+            // Crea el mensaje que se enviará
+            const mensaje = `Hola Ariel y Santiago. Me interesa realizar un pedido del whisky: ${nombreWhisky}. Por favor, indíquenme los pasos a seguir.`;
+            
+            // Notificación al usuario
+            alert(`Para pedir tu ${nombreWhisky}, comunícate a los números:\n\n📞 ${numeroPrincipal}\n📞 ${numeroSecundario}\n\nMensaje sugerido copiado al portapapeles (simulado).`);
+            
+            // Opcional: Redirigir a WhatsApp (Asumiendo que los números tienen prefijo de país, aquí se usa formato internacional genérico)
+            // window.open(`https://wa.me/591${numeroPrincipal}?text=${encodeURIComponent(mensaje)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
